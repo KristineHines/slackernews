@@ -18,6 +18,26 @@
   <title></title>
 </head>
 <body>
-  <%= yield %>
+
+  <div class="container">
+    <nav>
+      <header>
+        <p>slackernews:the place for slack</p>
+      
+        <ul>
+          <% if session[:slacker_id] %>
+          <li><a href="/post/create">Create Post</a></li
+          <li><a href="/user/logout">Log Out</a></li>
+          <% else %>
+          <li><a href="/user/login">Log In</a></li>
+          <li><a href="/user/signup">Sign Up</a></li>
+          <% end %>
+        </ul>
+      </header>
+    </nav>
+    <div class="content">
+    <%= yield %>
+  </div>
+</div>
 </body>
 </html>

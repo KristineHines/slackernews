@@ -1,0 +1,9 @@
+<div class="post-header">
+  <h2> <%= @post.title %> </h2>
+  <p> <%= @post.post_body %> </p>
+  <footer>posted by : <%=@post.user.username %> created at: <%=@post.created_at %> </footer>
+</div>
+<br>
+<div class="comments">
+  <h4>Comments for this post</h4>
+</div>
