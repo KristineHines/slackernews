@@ -3,7 +3,7 @@ p, h1, h2, h3, h4, h5, h6, a{
 }
 
 nav{
-  width:737px;
+  width:730px;
   margin: 0 auto;
   background-color: #ff6600;
   height:20px;
@@ -45,8 +45,31 @@ body{
   background-image: url('/cat.png')
 }
 
+footer {
+  border-top: 3px solid #ff6600;
+  bottom: 0;
+  padding:20px;
+  margin:0 auto;
+  width:737px;
+  height:100px;
+  background-color: rgba(246, 246, 239, .95)
+}
+
+footer a{
+  text-decoration: none;
+  font-size: 12px;
+  color:black;
+}
+footer{
+  text-align: center;
+}
+
+footer form{
+  padding-top: 20px;
+  color:rgb(130, 130, 130);
+}
 .container {
-  margin: 0px auto;
+  margin: 0 auto;
   width: 100%;
   background-color: rgba(188, 188, 188, 0.1);
   padding: 10px 0 0 0 ;
