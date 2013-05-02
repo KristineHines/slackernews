@@ -1,27 +1,16 @@
-<tr>
-  <td>
-    <table border=​"0" cellpadding=​"0" cellspacing=​"0">​
-      <tbody>
 
 
-
-        <tr>
-          <td align=​"right" valign=​"top" class=​"title">​
-           <% all_post.each do |post| %>
-           <% if post.url %>
-           <td class=​"title">​<a href='http://<%=post.url%>'><%=post.title %></a></td>​
-           <%else%>  
-           <a href='/post/<%=post.id%>'><%=post.title %></a>
-         </td>
-           <%end%>
-         </tr>
-           <tr>
-           <td class=​"subtext">​</span>
-           <a href='/post/<%=post.id%>'>Comments</a>
-           <%end%>
-           <div class="pagination"><%= will_paginate @post %></div>
-         </tr>
-         </tbody>
+<div>
+  <% all_post.each do |post| %>
+    <% if post.url %>
+      <li class=​"title">​<a href='http://<%=post.url%>'><%=post.title %></a></li>
+    <%else%>  
+      <li><a href='/post/<%=post.id%>'><%=post.title %></a></li>
+    <%end%>
+    <li><a href='/post/<%=post.id%>'>Comments</a></li>
+  <%end%>
+  <div class="pagination"><%= will_paginate @post %></div>
+</div>
 
 
 

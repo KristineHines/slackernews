@@ -1,15 +1,15 @@
 <form action="/post/create" method="post">
   <br><input type="text" name="title" placeholder="Title"><br><br>
-  <input type="text" name="url" placeholder="link"><br>
+      <input type="text" name="url" placeholder="link"><br>
     <p>or</p>
-  <textarea rows="8" cols="50" type="text" name="post_body"> </textarea><br><br>
-  <input type="submit" value="Create Post">
+      <textarea rows="8" cols="50" type="text" name="post_body"> </textarea><br><br>
+      <input type="submit" value="Create Post">
 </form>
 <% if @post && @post.errors.any?%>
-<ul>
-<% @post.errors.full_messages.each do |msg| %>
-<li><%= msg %></li>
-<% end %>
-</ul>
+  <ul>
+  <% @post.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
 <% end %>
 

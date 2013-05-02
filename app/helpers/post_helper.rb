@@ -11,8 +11,9 @@ def current_user
   @current_user ||= User.find(session[:slacker_id]) if session[:slacker_id]
 end
 
-def get_id(skill)
-  skill_id = Skill.find_or_create_by_name(skill)
-  return skill.id
+# def get_id(skill)
+#   skill_id = Skill.find_or_create_by_name(skill)
+#   return skill.id
   
+# end
 end

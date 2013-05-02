@@ -6,8 +6,19 @@
 
   <div class="posts">
     <h4>Your Posts</h4>
+    <% @user.posts.each do |post| %>
+      <% if post.url.blank?%>
+        <li>Title:<%= post.title %><br><br><%=post.post_body%></li>
+      <% else %>
+        <li>Title:<a href="http://<%= post.url %>"><%=post.title%></a></li>
+      <%end%>
+    <%end%>
   </div>
   <div class="comments">
     <h4>Your Comments</h4>
+    <% @user.comments.each do |comment| %>
+      <li>Comment:<br><%= comment.comment_body %><br><br>Post Username: <% user = User.find(comment.user) %><%=user.username%></li><br>  
+    <%end%>
+
   </div>
 
