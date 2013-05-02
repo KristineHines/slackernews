@@ -1,4 +1,17 @@
+<div class="container">
 
+  <div id="front">
+  <% all_post.each do |post| %>
+    <% if post.url %>
+      <li><a href='http://<%=post.url%>'><%=post.title %></a><li>
+    <%else%>  
+      <li><a href='/post/<%=post.id%>'><%=post.title %></a><li>
+    <%end%>
+    <li><a href='/post/<%=post.id%>'>Comments</a><li>
+  <%end%>
+  <div class="pagination"><%= will_paginate @post %></div>
+  </div>
+</div>
 
 
 

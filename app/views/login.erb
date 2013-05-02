@@ -1,8 +1,21 @@
+<div class="container" id='login'>
+  <div>
+    <form action="/user/login" method="post">
+      <input type="text" name="username" placeholder="enter username">
+      <input type="password" name="password" placeholder="enter password">
+      <input type="submit" value="Login">
+      <%= @error %>
+    </form>
+  </div>
 
-<form action="/user/login" method="post">
-  <input type="text" name="username" placeholder="enter username">
-  <input type="text" name="password" placeholder="enter password">
-  <input type="submit" value="Login">
+  <div>
+    <form action="/user/create" method="post">
+      <input type="text" name="username" placeholder="enter username">
+      <input type="text" name="email" placeholder="enter email">
+      <input type="password" name="password" placeholder="enter password">
+      <input type="submit" value="Create a new Slacker Account">
+    </form>
 
-</form>
-<%= @error %>
+    <%= @error %>
+  </div>
+</div>

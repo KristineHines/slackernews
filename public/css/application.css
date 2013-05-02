@@ -101,4 +101,10 @@ footer form{
   width: 49%;
 }
 
+li {
+  list-style-type: none; 
+}
+
+
+
 

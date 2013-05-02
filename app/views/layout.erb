@@ -21,15 +21,15 @@
 
   <div class="container">
     <nav>
-      <header><img src="/slackernews.gif"></img>
-        <p>Slacker News</p>
+      <header><a href="/"><img src="/slackernews.gif"></img></a>
+        <p><a href="/">Slacker News</p></a>
         <ul>
           <% if session[:slacker_id] %>
           <li><a href="/post/create">Create Post</a></li
           <li><a href="/user/logout">Log Out</a></li>
           <% else %>
-          <li><a href="/user/login">Log In</a></li>
-          <li><a href="/user/signup">Sign Up</a></li>
+          <li><a href="/user/login">Login</a></li>
+         
           <% end %>
         </ul>
       </header>
@@ -37,7 +37,7 @@
     <div class="content">
     <%= yield %>
   </div>
-  <footer><a href="http://binaryskipper.tumblr.com">Stephenitis & </a> | <a href="https://github.com/Ryan5231">Ryan</a> | <a href="http://devbootcamp.com">Dev Bootcamp 2013</a> 
+  <footer><a href="http://www.reactiongifs.com/wp-content/uploads/2013/02/nope.gif">Stephenitis & </a> | <a href="http://gifs.gifbin.com/012010/1263382623_dog_playing_golf.gif">Ryan</a> | <a href="http://devbootcamp.com">Dev Bootcamp 2013</a> 
   <form>Search: <input type="text"><form> </footer>
 
 </div>

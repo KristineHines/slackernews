@@ -1,9 +1,31 @@
+
+
 <div class="post-header">
-  <h2> <%= @post.title %> </h2>
-  <p> <%= @post.post_body %> </p>
-  <footer>posted by : <%=@post.user.username %> created at: <%=@post.created_at %> </footer>
+  <% unless @post.url.blank? %>
+    <h2><a href="http://<%=@post.url%>"><%= @post.title %></a></h2>
+  <%else%>
+    <h2><%= @post.title %></h2>
+    <p> <%= @post.post_body %> </p>
+  <% end %>
+  <h4>posted by: <a href="/user/<%=@post.user_id%>"><%= @post.user.username %></a> created at: <%=@post.created_at %></h4>
+  <div class="comments">
+  <h4>Comments for this post</h4>
+      <form action='/post/<%=@post.id%>/comment' method='post'>
+      <textarea rows='10' columns='20' placeholder='Comment' type='text' name='comment_body'></textarea>
+      <input type='submit' value="Post Comment">
+    </form>
+ </div>
+
+ <% unless @post.comments.length > 0%>
+ <ul>
+   <% @post.comments.each do |comment| %>
+      <li><%=comment.comment_body %>><li> 
+      <li><a href='/user/<%=comment.user.id%>'><%=comment.user.username %></a><li>
+    <%end%>
+  </ul>
+  <%end%>
+
+  
 </div>
 <br>
-<div class="comments">
-  <h4>Comments for this post</h4>
-</div>
+

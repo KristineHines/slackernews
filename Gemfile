@@ -2,6 +2,7 @@ source :rubygems
 
 # PostgreSQL driver
 gem 'pg'
+gem 'debugger'
 
 # Sinatra driver
 gem 'sinatra'
@@ -16,6 +17,7 @@ gem 'activerecord'
 gem 'rake'
 gem 'bcrypt-ruby'
 gem 'shotgun'
+gem 'will_paginate', '~> 3.0.0'
 
 group :test do
   gem 'faker'

@@ -1,11 +1,11 @@
 
-get "/user/signup" do
-  erb :signup
-end
-
 post "/user/create" do
-  testcase = User.create(params)
-  redirect "/user/login"
+  @user = User.new(params)
+  @user.save
+  if @user.save
+    session[:slacker_id] = @user.id
+    redirect("/")
+  end
 end
 
 get "/user/login" do
@@ -13,19 +13,21 @@ get "/user/login" do
 end
 
 post "/user/login" do
-  if @user = User.find_by_username(params[:username])
-      if @user.password == params[:password]
-    session[:slacker_id] = @user.id
+  current_user = User.authenticate(params[:username], params[:password])
+
+  if current_user
+    session[:slacker_id] = current_user.id
     redirect("/")
-      else
-        @error = "Login or Password is not correct"
-        erb :login
-      end
   else
-    @error = "User does not exist."
+    @error = "Login or Password is not correct"
     erb :login
   end
 end
+
+
+
+
+
 
 get "/user/logout" do
   session.clear
@@ -33,8 +35,8 @@ get "/user/logout" do
   redirect to "/"
 end
 
-get "/user/profile" do
-  @user = User.find(session[:slacker_id])
+get "/user/:id" do
+  @user = User.find(params[:id])
   erb :profile
 end
 
